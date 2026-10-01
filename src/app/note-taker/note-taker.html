@@ -1,0 +1,17 @@
+<div class="container form-group">
+<input type="text" 
+class="form-control" 
+placeholder="Add a note"  
+[(ngModel)]="noteToAdd"
+> 
+
+<button class="btn btn-success mt-2" (click)="addNote()">Add</button>
+</div>
+<h2 class="text-center mt-2">The number of notes is {{ notes.length }}</h2>
+<div class="mt-20 note-container">
+    @for (note of notes; track $index) {
+    <div class="note">
+        <i class="fas fa-eraser" (click)="deleteNote(note)"></i> {{ note }}
+    </div>
+    }
+</div>
